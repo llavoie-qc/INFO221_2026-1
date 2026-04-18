@@ -1,0 +1,12 @@
+== INFO 221
+Matériel de cours de l’activité INFO221 — Éléments de bases données — dispensée
+au campus de l’ULC-Icam à Kinshasa et à celui de l’Ucac-Icam à Douala
+au semestre d’hiver 2026.
+
+* Plan de l’activité (INFO221_2026-1_PDM.pdf)
+* Standard de programmation SQL (STD-SQL-01_NT.pdf)
+* Matériel classé par semaine de prestation (/S01a à /S03b)
+* Matériel pour les laboratoires (/LAB0 à /LAB4)
+* Matériel du travail de session (/TS)
+
+include::FAQ.adoc[]

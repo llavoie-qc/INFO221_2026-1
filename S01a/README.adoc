@@ -1,0 +1,27 @@
+== S01
+
+=== 2026-04-20
+* Présentation du plan de l’activité (INFO221_2026-1_PDM)
+* Présentation de TMR_01-Introduction
+  - Critères d’adéquation
+  - Caractérisation des problèmes de données par les huit « V »
+* Travail dirigé (TD) mettant en pratique les huit « V »
+* Lectures
+  - TMR_01-Rappels (au besoin)
+
+=== 2026-04-21
+* Présentation de MCD_00-Preambule
+* Perspective historique et scientifique de la théorie relationnelle
+* Présentation de TMR_02-Fondements
+  - Diaporama de présentation TMR_02-Fondements_PRE
+  - Document de référence TMR_02-Fondements_NDC
+  - Diaporama de synthèse TMR_02-Fondements_SYN
+* LAB0 - deuxième partie
+  - Exemple « Évaluation » version 0
+  - Installation des outils requis
+    *** DataGrip
+    *** PostgreSQL
+  - Test des outils
+
+=== 2026-04-22
+* À venir
