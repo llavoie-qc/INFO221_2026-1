@@ -9,4 +9,9 @@ au semestre d’hiver 2026.
 * Matériel pour les laboratoires (/LAB0 à /LAB4)
 * Matériel du travail de session (/TS)
 
+Les présent matériel est diponible sur GitHub, usager llavoie-qc,
+projet INFO221_2026-1 :
+
+  * https://github.com/llavoie-qc/INFO221_2026-1/tree/main
+
 include::FAQ.adoc[]
