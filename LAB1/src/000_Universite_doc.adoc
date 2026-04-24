@@ -1,0 +1,27 @@
+.Contributeurs
+  (CK01) christina.khnaisser@usherbrooke.ca,
+  (LL01) luc.lavoie@usherbrooke.ca
+
+.Adresse, droits d’auteur et copyright
+  Groupe Μῆτις (Métis)
+  Département d’informatique
+  Faculté des sciences
+  Université de Sherbrooke
+  Sherbrooke (Québec)  J1K 2R1
+  Canada
+
+  [CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0)]
+
+.Tâches projetées
+  S.O.
+
+.Tâches projetées
+  2026-04-19 LL01. Refactorisation pour en faire un laboratoire.
+
+.Tâches réalisées
+  2024-05-08 LL01. Seconde ébauche.
+  2021-03-19 LL01. Première ébauche.
+
+.Références
+[ddv] {rep_exemples}/Universite/Universite_DDV.pdf +
+[std] {rep_modules}/BD190-STD-SQL-01_NDC.pdf
