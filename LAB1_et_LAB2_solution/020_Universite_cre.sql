@@ -58,6 +58,7 @@ create table Prealable
 (
   sigle Sigle not null,
   prealable Sigle not null,
+--  df sigle, prealable -> .
   constraint Prealable_cc0 primary key (sigle, prealable),
   constraint Prealable_cr0 foreign key (sigle) references Activite,
   constraint Prealable_cr1 foreign key (prealable) references Activite (sigle)
@@ -91,6 +92,7 @@ create table Offre
 (
   sigle Sigle not null,
   trimestre Trimestre not null,
+-- df sigle, trimestre -> .
   constraint Offre_cc0 primary key (sigle, trimestre),
   constraint Offre_cr0 foreign key (sigle) references Activite
 ) ;
@@ -111,6 +113,7 @@ create table Groupe
   sigle Sigle not null,
   trimestre Trimestre not null,
   noGroupe NoGroupe not null,
+--  df sigle, trimestre, noGroupe -> .
   constraint Groupe_cc0 primary key (sigle, trimestre, noGroupe),
   constraint Groupe_cr0 foreign key (sigle, trimestre) references Offre
 ) ;
@@ -165,6 +168,7 @@ create table Inscription
   trimestre Trimestre not null,
   noGroupe NoGroupe not null,
   matriculeE MatriculeE not null,
+  --  df sigle, trimestre, matriculeE -> noGroupe
   constraint Inscription_cc0 primary key (sigle, trimestre, matriculeE),
   constraint Inscription_cr0 foreign key (sigle, trimestre, noGroupe) references Groupe,
   constraint Affectation_cr1 foreign key (matriculeE) references Etudiant
@@ -188,7 +192,7 @@ create table Evaluation
   trimestre Trimestre not null,
   matriculeE MatriculeE not null,
   note Note not null,
-  --  df sigle, trimestre, noGroupe, matriculeE -> note
+  --  df sigle, trimestre, matriculeE -> note
   constraint Evaluation_cc0 primary key (sigle, trimestre, matriculeE),
   constraint Evaluation_cr0 foreign key (sigle, trimestre, matriculeE)
     references Inscription
@@ -236,6 +240,7 @@ create table Affectation
   trimestre Trimestre not null,
   noGroupe NoGroupe not null,
   matriculeP MatriculeP not null,
+  --  df sigle, trimestre, noGroupe -> matriculeP
   constraint Affectation_cc0 primary key (sigle, trimestre, noGroupe),
   constraint Affectation_cr0 foreign key (sigle, trimestre, noGroupe) references Groupe,
   constraint Affectation_cr1 foreign key (matriculeP) references Enseignant
