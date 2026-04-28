@@ -181,7 +181,7 @@ call Inscription_ins0 ('3', '20261', '01');
 call Inscription_ins0 ('4', '20261', '01');
 
 --
--- Evaluations
+-- Évaluations
 --
 create or replace function note_alea () returns Note
 return cast (floor (50 + random()*51) as Note) ;
@@ -222,8 +222,8 @@ values
 */
 
 /*
--- Comptetence (sigle, MatriculeP)
--- Disponibilité (trimestre, MatriculeP)
+-- Compétences (sigle, MatriculeP)
+-- Disponibilités (trimestre, MatriculeP)
 */
 
 --
