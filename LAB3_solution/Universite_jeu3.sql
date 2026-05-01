@@ -57,9 +57,9 @@ values
 insert into Activite
   (sigle, titre, credit)
 values
-  ('ZZZ111', 'ZZZ111', 3),
-  ('ZZZ311', 'ZZZ311', 6),
-  ('ZZZ411', 'ZZZ411', 9);
+  ('ZZZ111', 'titre, ZZZ111', 3),
+  ('ZZZ311', 'titre, ZZZ311', 6),
+  ('ZZZ411', 'titre, ZZZ411', 9);
 
 insert into Prealable
   (sigle, prealable)

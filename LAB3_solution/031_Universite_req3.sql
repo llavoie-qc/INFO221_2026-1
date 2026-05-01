@@ -65,12 +65,13 @@ TODO
    jointures sélectives (using) aux jointures naturelles afin de pallier le
    risque d’une modification indirecte de la nature de la jointure en cas
    de changements aux listes d’attributs des tables impliquées.
-   Ceci augmente l’évolutivité du script.
+   Ceci augmente l’évolutivité du script. +
    À FAIRE : Appliquer cette règle au présent script.
-2. La requête X05 n’a pas pris en compte la possibilité qu’un étudiant puisse être inscrit
-   à une même activité plusieurs fois. Dans ce cas, la règle stipule qu’il faut
-   utiliser la seule note la plus récente dans le cal de la moyenne.
-   À FAIRE : Appliquer la règle.
+2. La requête X05 n’a pas pris en compte la possibilité qu’un étudiant puisse
+   être inscrit à une même activité plusieurs fois. Dans ce cas, la règle
+   stipule qu’il faut utiliser la seule note la plus récente dans le calcul de
+   la moyenne. +
+   À FAIRE : Appliquer la règle. +
    Ce cas inclut la reprise d’un cours déjà réussi.
    Problème : dans le calcul de la réussite, de la moyenne, etc.,
    quelle(s) valeurs(s) prendre en considération ?
@@ -78,7 +79,7 @@ TODO
    - la plus récente,
    - toutes ?
 3. Le calcul des moyennes cumulatives doit prendre en compte la pondération des
-   notes par le nombre de crédits des activités.
+   notes par le nombre de crédits des activités. +
    À FAIRE : appliquer cette règle.
 4. Écrire la fonction X07 à partir des deux requêtes proposées.
 */
@@ -95,6 +96,10 @@ begin atomic
 end;
 comment on function Etudiant_nb is $$
 Calculer le nombre d’étudiants par groupe.
+
+* df : sigle, trimestre, noGtoupe -> n
+
+Le groupe identifié par «sigle», «trimestre», «noGroupe» comprend «n» étudiants.
 $$ ; -- end of comment
 /*T*/ select * from Etudiant_nb() order by sigle, trimestre, noGroupe ;
 
@@ -113,8 +118,13 @@ begin atomic
   where n = (select max(n) from T) ;
 end;
 comment on function Trimestre_max is $$
-Quel est le trimestre comportant le plus d’inscriptions ?
+Quel est le trimestre comportant le plus d’inscriptions ? +
 Il peut y avoir plusieurs trimestres _ex aequo_, le résultat est donc une table.
+
+* df : trimestre -> n
+
+Le trimestre «trimestre» comporte au «n» inscriptions, soit moins autant
+d’inscriptions que tout autre trimestre.
 $$ ; -- end of comment
 /*T*/ select * from Trimestre_max() order by trimestre ;
 
@@ -138,12 +148,17 @@ begin atomic
     except
       select distinct matriculeP from Affectation where Activite_niveau(sigle)=n
     )
-  select *
+  select matriculeP, nom
   from Enseignant natural join X ;
 end;
 comment on function Enseignant_N1_absent_vEns is $$
 Quels sont les enseignants n’ayant pas enseigné d’activités de niveau _n_ ? +
 Le niveau d’une activité est donné par le premier chiffre du sigle.
+
+* df matriculeP -> nom
+
+L’enseignant identifié par le matricule «matriculeP», portant le nom «nom»,
+n’a jamais enseigné d’activité de niveau «n» à l’UdeS.
 $$ ; -- end of comment
 /*T*/ select nom, matriculeP from Enseignant_N1_absent_vEns('2') order by nom, matriculeP ;
 
@@ -159,11 +174,17 @@ begin atomic
       from Affectation as A
       where Activite_niveau(sigle)=n and E.matriculeP=A.matriculeP)
     )
-  select * from Enseignant natural join X ;
+  select matriculeP, nom
+  from Enseignant natural join X ;
 end;
 comment on function Enseignant_N1_absent_vQuant is $$
 Quels sont les enseignants n’ayant pas enseigné d’activités de niveau _n_ ? +
 Le niveau d’une activité est donné par le premier chiffre du sigle.
+
+* df matriculeP -> nom
+
+L’enseignant identifié par le matricule «matriculeP», portant le nom «nom»,
+n’a jamais enseigné d’activité de niveau «n» à l’UdeS.
 $$ ; -- end of comment
 /*T*/ select nom, matriculeP from Enseignant_N1_absent_vQuant('2') order by nom, matriculeP ;
 
@@ -279,7 +300,7 @@ begin atomic
       nom,
       round(moyenne_cum,2) as moyenne_cum,
       round(moyenne_coh,2) as moyenne_coh,
-      round(ecart_type_coh,2) asecart_type_coh
+      round(ecart_type_coh,2) as ecart_type_coh
     from E join C on E.cohorte = C.cohorte natural join Etudiant
     where moyenne_cum > moyenne_coh + factET*ecart_type_coh ;
 end ;
@@ -287,6 +308,10 @@ comment on function Etudiant_nbr_et is $$
 Quels sont les étudiants ayant réussi au moins _nbr_ activités avec une moyenne cumulative
 supérieure à un écart-type au-dessus de la moyenne de leur cohorte ? +
 La cohorte d’un étudiant est donnée par le quatrième chiffre de son matricule.
+
+* df matriculeP -> nom, moyenne_cum, moyenne_coh, ecart_type_coh
+
+...
 $$ ; -- end of comment
 /*T*/ select * from Etudiant_nbr_et (5, 60::Note, 1.0) ;
 
