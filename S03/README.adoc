@@ -21,8 +21,8 @@
 
 === 2026-05-07
 * Sur la base de l’exemple ../Exemple/Sondage
+  - Retour sur la modélisation (voir MCD_10-EA_NDC.pdf)
   - Retour sur la traduction (voir MCD_04-Traduction-EA-Rel_Structurelle_PRE.pdf)
-  - Retour sur la modélisation (voir MCD_00-Preambule_NDC.pdf)
 * Questions sur le problème du TS1
 
 === 2026-05-08
