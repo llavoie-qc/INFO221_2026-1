@@ -24,4 +24,15 @@
   - Test des outils
 
 === 2026-04-22
-* À venir
+* SQL_00
+* SQL_01
+* SQL_02b
+
+=== 2026-04-23
+* SQL_02a
+* SQL_02c
+* SQL_03a
+
+=== 2026-04-25
+* SQL_03b
+* SQL_04

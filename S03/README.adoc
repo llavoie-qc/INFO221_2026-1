@@ -1,0 +1,42 @@
+== S03
+
+=== 2026-05-04
+* MCD_00-Preambule_DIA.pdf
+* MCD_00-Preambule_NDC.pdf
+* MCD_10-EA_DIA.pdf
+* MCD_10-EA_NDC.pdf
+
+=== 2026-05-05
+* MCD_02c-Modelisation-EA-ex-Cours_PRE.pdf
+* MCD_04-Traduction-EA-Rel_Structurelle_PRE.pdf
+* MCD_04c-Traduction-EA-Rel_Synthese_PRE.pdf
+* MLR_02-Conception-Rel_PRE.pdf
+* Sondage_SCBD.pdf
+
+=== 2026-05-06
+* SQL_07-Gestion-des-cles_PRE.pdf
+* Transaction
+* Sur la base de l'exemple ../Exemple/Evaluation
+  - MLD_10-EMIR_DIA.pdf
+
+=== 2026-05-07
+* Sur la base de l’exemple ../Exemple/Sondage
+  - Retour sur la traduction (voir MCD_04-Traduction-EA-Rel_Structurelle_PRE.pdf)
+  - Retour sur la modélisation (voir MCD_00-Preambule_NDC.pdf)
+* Questions sur le problème du TS1
+
+=== 2026-05-08
+* Échanges sur le TS1
+
+== S04
+
+=== 2026-05-11
+* Retour sur la Normalisation (voir ../S02/TMR_06-Normalisation_NDC.pdf)
+* Si le temps le permet,
+  - retour sur les Transactions (voir ../S03/SQL_10-Transaction.pdf)
+
+=== 2026-05-12 (dernier cours)
+* Synthèse
+
+=== 2026-05-18
+* Examen final
